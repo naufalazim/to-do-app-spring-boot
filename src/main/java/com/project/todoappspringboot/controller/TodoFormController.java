@@ -32,6 +32,7 @@ public class TodoFormController {
         modelAndView.addObject("todoItems", todoItemRepository.findAll()); //pulling all the items from db
 
         modelAndView.addObject("today", Instant.now().atZone(ZoneId.systemDefault()).toLocalDate().getDayOfWeek());
+        modelAndView.addObject("date", Instant.now().atZone(ZoneId.systemDefault()).toLocalDate());
 
         return modelAndView;
     }
