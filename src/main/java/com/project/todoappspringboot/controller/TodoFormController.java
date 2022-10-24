@@ -53,15 +53,7 @@ public class TodoFormController {
         return "redirect:/";
     }
 
-
-    //  ================   PROBLEM HERE 🛑   =================
-    // PROBLEM: My problem is when user click edit button the output is error: This application has no explicit mapping for /error, so you are seeing this as a fallback.
-
-    // ERROR DISPLAY:
-    // There was an unexpected error (type=Bad Request, status=400).
-    //  Required request parameter 'id' for method parameter type Long is not present
-
-    //     PART: EDIT button 🛑
+    //     PART: EDIT button ✅
     @GetMapping("/edit/{id}")
     public ModelAndView showUpdateForm(@PathVariable("id") Long id, Model model) {
         ModelAndView modelAndView = new ModelAndView("update-to-do");
@@ -70,7 +62,7 @@ public class TodoFormController {
         return modelAndView;
     }
 
-    // PART: Save new data (update) 🆘
+    // PART: Save new data (update) ✅
     // update by id:
     @PostMapping("/todo/{id}")
     public String save(@ModelAttribute TodoItem todoItem) {
